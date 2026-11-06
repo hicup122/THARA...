@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for Supriya ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: linear-gradient(135deg,#160b24,#421c45,#8b3768);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: appear 1s ease;
+}
+
+.page.active { display: flex; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(48px, 10vw, 85px);
+  color: #ffb9dc;
+  text-shadow: 0 0 25px #ff65ae;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(35px, 7vw, 55px);
+  color: #ffc4df;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 650px;
+  line-height: 2;
+  font-size: 15px;
+  color: #ffe8f3;
+  margin: 10px auto;
+}
+
+button {
+  border: 1px solid #ffb1d5;
+  background: linear-gradient(135deg,#ff70b5,#b43b86);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 35px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 25px 8px 0;
+  box-shadow: 0 0 25px #ff62b277;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px #ff62b2;
+}
+
+.small {
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 30px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  width: 100%;
+}
+
+.glass {
+  padding: 30px;
+  border: 1px solid #ffffff30;
+  background: #ffffff12;
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  box-shadow: 0 10px 40px #0003;
+  margin: 20px auto;
+}
+
+.gift {
+  font-size: 95px;
+  cursor: pointer;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#ffc0df 1px,transparent 1px);
+  background-size: 70px 70px,110px 110px;
+  opacity: .3;
+  z-index: 0;
+}
+
+.nav {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  font-size: 12px;
+  color: #ffd8e9;
+}
+
+#giftMessage {
+  display: none;
+  animation: appear 1s ease;
+}
+
+footer {
+  color: #ffc8df;
+  font-size: 12px;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="nav">Made with ❤️</div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+  <div class="content">
+    <p>✨ A little surprise for someone special ✨</p>
+    <h1>Hey Supriya ❤️</h1>
+
+    <div class="glass">
+      <p>
+        Sometimes, a few words are all it takes to remind
+        someone that they are wished nothing but happiness.
+      </p>
+
+      <p>
+        So, I made this little corner of the internet just for you.
+      </p>
+    </div>
+
+    <button onclick="nextPage(2)">Open Your Surprise 💌</button>
+
+    <p class="small">A little website, with a lot of feelings.</p>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+  <div class="content">
+    <h2>A Little Surprise 🎁</h2>
+    <p>There's something waiting for you...</p>
+
+    <div class="glass">
+      <div class="gift" onclick="openGift()">🎁</div>
+      <p>Tap the gift to open it!</p>
+
+      <div id="giftMessage">
+        <h2>Surprise! 💗</h2>
+        <p>
+          You deserve all the beautiful things life has to offer.
+          Never forget how special your own journey is.
+        </p>
+      </div>
+    </div>
+
+    <button onclick="nextPage(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- PAGE 3 - NO PHOTO HOLDER -->
+<section class="page" id="page3">
+  <div class="content">
+    <h2>Some Things Stay Special 🌷</h2>
+
+    <div class="glass">
+      <p>
+        Not every chapter in life has to last forever to be meaningful.
+      </p>
+
+      <p>
+        Some moments become memories, some people become
+        lessons, and some experiences quietly remain a part
+        of who we are.
+      </p>
+
+      <p>
+        Whatever the past holds, I hope you remember the
+        beautiful moments with a smile.
+      </p>
+    </div>
+
+    <button onclick="nextPage(4)">A Letter For You 💌</button>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+  <div class="content">
+    <h2>Dear Supriya... 💗</h2>
+
+    <div class="glass">
+      <p>Hey Supriya,</p>
+
+      <p>
+        I don't really know where to begin, but I wanted
+        to make something different instead of just sending
+        another ordinary message.
+      </p>
+
+      <p>
+        Life takes us through different paths, and sometimes
+        things don't turn out the way we once imagined.
+        But that doesn't mean the good moments weren't real.
+      </p>
+
+      <p>
+        I genuinely hope you're doing well, smiling often,
+        chasing your dreams and finding happiness in
+        the little things.
+      </p>
+
+      <p>
+        There is no expectation behind these words.
+        Just a sincere wish for someone who was once
+        an important part of my life.
+      </p>
+
+      <p style="font-family:'Dancing Script';font-size:32px;color:#ffacd2">
+        Take care of yourself, Supriya. ❤️
+      </p>
+    </div>
+
+    <button onclick="nextPage(5)">My Wishes For You ✨</button>
+  </div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+  <div class="content">
+    <h2>My Wishes For You ✨</h2>
+
+    <div class="glass">
+      <p>🌸 May your days be filled with genuine happiness.</p>
+      <p>🌙 May your nights bring you peace and comfort.</p>
+      <p>🦋 May you achieve every dream you work for.</p>
+      <p>💖 May you always be surrounded by people who value you.</p>
+      <p>🌈 May life surprise you with beautiful opportunities.</p>
+      <p>✨ And may you never lose the beautiful person you are.</p>
+    </div>
+
+    <button onclick="nextPage(6)">One Last Thing ❤️</button>
+  </div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page" id="page6">
+  <div class="content">
+    <h1>For You, Supriya ❤️</h1>
+
+    <div class="glass">
+      <p>
+        Maybe life has its own plans for both of us.
+      </p>
+
+      <p>
+        Maybe we're just two people walking different paths now.
+      </p>
+
+      <p>
+        But wherever your journey takes you,
+        I hope it leads you to everything your heart deserves.
+      </p>
+
+      <h2 style="margin-top:30px">Keep Smiling! 🌷</h2>
+
+      <p>You deserve happiness. Always.</p>
+
+      <p style="font-family:'Dancing Script';font-size:30px">
+        With warm wishes ❤️
+      </p>
+    </div>
+
+    <button onclick="restart()">Experience Again ↻</button>
+
+    <footer>
+      Created with a little bit of nostalgia and lots of good wishes.
+    </footer>
+  </div>
+</section>
+
+<script>
+let currentPage = 1;
+
+function nextPage(number) {
+  document.getElementById("page" + currentPage)
+    .classList.remove("active");
+
+  currentPage = number;
+
+  document.getElementById("page" + currentPage)
+    .classList.add("active");
+
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function openGift() {
+  const message = document.getElementById("giftMessage");
+  message.style.display = "block";
+  createHearts(20);
+}
+
+function restart() {
+  document.getElementById("page" + currentPage)
+    .classList.remove("active");
+
+  currentPage = 1;
+
+  document.getElementById("page1")
+    .classList.add("active");
+
+  document.getElementById("giftMessage").style.display = "none";
+
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function createHearts(amount = 5) {
+  for(let i=0; i<amount; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    heart.innerHTML = ["❤️","💗","💕","✨","🌸"][
+      Math.floor(Math.random()*5)
+    ];
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15+Math.random()*25) + "px";
+    heart.style.animationDuration = (4+Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+  }
+}
+
+setInterval(() => createHearts(2), 1200);
+</script>
+
+</body>
+</html>
